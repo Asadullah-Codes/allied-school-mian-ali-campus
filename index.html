@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allied School - Mian Ali Campus</title>
+    <link rel="icon" type="image/png" href="tab logo.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for crisp icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        alliedBlue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            600: '#0056b3',
+                            700: '#004494',
+                            800: '#003366',
+                            900: '#002147',
+                        },
+                        alliedRed: {
+                            50: '#fef2f2',
+                            500: '#ef4444',
+                            600: '#d32f2f',
+                            700: '#b71c1c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom subtle patterns and card hover effects */
+        .hero-pattern {
+            background-color: #002147;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .teacher-img {
+            object-fit: cover;
+            object-position: top center;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-alliedBlue-600 selection:text-white">
+
+    <!-- Top Announcement Ticker -->
+    <div class="bg-alliedRed-600 text-white text-xs sm:text-sm py-2 px-4 font-medium">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span
+                    class="bg-white text-alliedRed-600 font-bold px-2 py-0.5 rounded text-[11px] uppercase tracking-wider">Notice</span>
+                <span>Admissions &amp; Upcoming Test Series Preparations are underway at Mian Ali Campus!</span>
+            </div>
+            <div class="hidden md:flex items-center gap-4 text-red-100 text-xs">
+                <span><i class="fa-solid fa-graduation-cap mr-1"></i> Project of PGC</span>
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Mian Ali Campus, Faisalabad</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div
+                        class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white p-1 shadow-sm border border-slate-100 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                        <!-- School Logo Image -->
+                        <img src="alliedlogo.png" alt="Allied School Logo" class="w-full h-full object-contain"
+                            onerror="this.onerror=null; this.src='https://placehold.co/120x120/0056b3/ffffff?text=Logo';">
+                    </div>
+                    <div>
+                        <span
+                            class="block font-heading font-extrabold text-lg sm:text-xl text-alliedBlue-800 leading-tight tracking-tight">
+                            Allied School
+                        </span>
+                        <span class="block text-xs sm:text-sm font-semibold text-alliedRed-600 tracking-wide">
+                            Mian Ali Campus
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#home"
+                        class="px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-alliedBlue-600 hover:bg-alliedBlue-50 transition">Home</a>
+                    <a href="#administration"
+                        class="px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-alliedBlue-600 hover:bg-alliedBlue-50 transition">Administration
+                        &amp; Faculty</a>
+                    <a href="#results"
+                        class="px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-alliedBlue-600 hover:bg-alliedBlue-50 transition">Results</a>
+                    <a href="#news"
+                        class="px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-alliedBlue-600 hover:bg-alliedBlue-50 transition">News
+                        &amp; Updates</a>
+                    <a href="#contact"
+                        class="ml-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-alliedBlue-600 hover:bg-alliedBlue-700 shadow-sm transition">Contact
+                        Campus</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Toggle Menu"
+                    class="md:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-5 space-y-1 shadow-lg">
+            <a href="#home"
+                class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-alliedBlue-50 hover:text-alliedBlue-600">Home</a>
+            <a href="#administration"
+                class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-alliedBlue-50 hover:text-alliedBlue-600">Administration
+                &amp; Faculty</a>
+            <a href="#results"
+                class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-alliedBlue-50 hover:text-alliedBlue-600">Results</a>
+            <a href="#news"
+                class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-alliedBlue-50 hover:text-alliedBlue-600">News
+                &amp; Updates</a>
+            <a href="#contact"
+                class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-white bg-alliedBlue-600 text-center mt-2">Contact
+                Campus</a>
+        </div>
+    </header>
+
+    <!-- Hero / Main Banner Section -->
+    <section id="home" class="hero-pattern relative overflow-hidden text-white">
+        <!-- Decorative Accent Shapes -->
+        <div
+            class="absolute -top-24 -right-24 w-96 h-96 bg-alliedBlue-600/30 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div
+            class="absolute -bottom-24 -left-24 w-80 h-80 bg-alliedRed-600/20 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-blue-100 text-xs sm:text-sm font-semibold backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-alliedRed-500 animate-pulse"></span>
+                        A Project of Punjab Group of Colleges (PGC)
+                    </div>
+                    <h1
+                        class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Shaping Bright Futures at <span class="text-sky-300">Allied School</span>
+                        <span class="block text-xl sm:text-3xl font-bold text-red-300 mt-2">Mian Ali Campus</span>
+                    </h1>
+                    <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Committed to academic excellence, strong character building, and modern education. Empowering
+                        students with dedicated faculty, disciplined environment, and co-curricular growth.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#administration"
+                            class="px-6 py-3.5 rounded-xl bg-alliedRed-600 hover:bg-alliedRed-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-red-900/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-solid fa-chalkboard-user"></i> Meet Our Faculty
+                        </a>
+                        <a href="#results"
+                            class="px-6 py-3.5 rounded-xl bg-white text-alliedBlue-900 hover:bg-blue-50 font-bold text-sm sm:text-base shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i class="fa-solid fa-trophy text-amber-500"></i> View Results
+                        </a>
+                        <a href="#news"
+                            class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-sm sm:text-base transition flex items-center gap-2">
+                            <i class="fa-solid fa-bullhorn"></i> Campus News
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Feature Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                        <div class="flex items-center gap-4 mb-6 pb-6 border-b border-white/15">
+                            <div
+                                class="w-16 h-16 bg-white rounded-2xl p-2 flex items-center justify-center shadow-md shrink-0 overflow-hidden">
+                                <!-- School Logo Image -->
+                                <img src="alliedlogo.png" alt="Allied School Logo" class="w-full h-full object-contain"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/120x120/0056b3/ffffff?text=Logo';">
+                            </div>
+                            <div>
+                                <h2 class="font-heading font-bold text-xl text-white">Campus Highlights</h2>
+                                <p class="text-xs sm:text-sm text-blue-200">Quality Education &amp; Holistic Growth</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-sky-500/20 text-sky-300 flex items-center justify-center mb-2">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                <div class="font-bold text-lg text-white">Expert Staff</div>
+                                <div class="text-xs text-blue-200">Qualified &amp; Caring Teachers</div>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-red-500/20 text-red-300 flex items-center justify-center mb-2">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div class="font-bold text-lg text-white">Discipline</div>
+                                <div class="text-xs text-blue-200">Structured Learning Culture</div>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center mb-2">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div class="font-bold text-lg text-white">Top Results</div>
+                                <div class="text-xs text-blue-200">Board &amp; School Distinctions</div>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4 border border-white/10">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-2">
+                                    <i class="fa-solid fa-bus"></i>
+                                </div>
+                                <div class="font-bold text-lg text-white">Study Trips</div>
+                                <div class="text-xs text-blue-200">Recreational &amp; Educational</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administration & Leadership Section -->
+    <section id="administration" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span
+                class="inline-block px-3.5 py-1 rounded-full bg-alliedBlue-100 text-alliedBlue-700 font-bold text-xs uppercase tracking-wider mb-3">
+                Campus Leadership
+            </span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                School Administration
+            </h2>
+            <p class="mt-3 text-slate-600 text-sm sm:text-base">
+                Guided by visionary leadership dedicated to maintaining the highest academic and moral standards at
+                Allied School Mian Ali Campus.
+            </p>
+        </div>
+
+        <!-- Leadership Cards Grid (Director, Principal, Head of High Section) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <!-- Director Card -->
+            <div
+                class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group">
+                <div class="relative h-80 w-full bg-slate-100 overflow-hidden">
+                    <img src="director.png" alt="Director"
+                        class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x700/e2e8f0/64748b?text=director.jpg';">
+                    <!-- Small Corner Badge on Photo -->
+                    <span
+                        class="absolute top-3 right-3 bg-alliedBlue-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md border border-white/20 tracking-wide">
+                        Director
+                    </span>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-xl font-bold text-slate-900">Campus Director</h3>
+                    <p class="text-alliedBlue-600 font-semibold text-sm mt-1">Allied School — Mian Ali Campus</p>
+                    <p class="text-slate-500 text-xs mt-3 leading-relaxed">
+                        Leading our educational mission with vision, integrity, and commitment to student success.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Principal Card -->
+            <div
+                class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group">
+                <div class="relative h-80 w-full bg-slate-100 overflow-hidden">
+                    <img src="principle (2).png" alt="Principal"
+                        class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x700/e2e8f0/64748b?text=principle.png';">
+                    <!-- Small Corner Badge on Photo -->
+                    <span
+                        class="absolute top-3 right-3 bg-alliedRed-600/95 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md border border-white/20 tracking-wide">
+                        Principal
+                    </span>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-xl font-bold text-slate-900">Principal</h3>
+                    <p class="text-alliedRed-600 font-semibold text-sm mt-1">Academic &amp; Administrative Head</p>
+                    <p class="text-slate-500 text-xs mt-3 leading-relaxed">
+                        Ensuring excellence in teaching methodologies, student grooming, and campus operations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Head of High Section Card -->
+            <div
+                class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group">
+                <div class="relative h-80 w-full bg-slate-100 overflow-hidden">
+                    <img src="head of sec.png" alt="Head of High Section"
+                        class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x700/e2e8f0/64748b?text=head+of+high+sect.jpg';">
+                    <!-- Small Corner Badge on Photo -->
+                    <span
+                        class="absolute top-3 right-3 bg-alliedBlue-800/95 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md border border-white/20 tracking-wide">
+                        Head of High Section
+                    </span>
+                </div>
+                <div class="p-6 text-center">
+                    <h3 class="font-heading text-xl font-bold text-slate-900">Head of High Section</h3>
+                    <p class="text-alliedBlue-600 font-semibold text-sm mt-1">Secondary &amp; Matriculation Wing</p>
+                    <p class="text-slate-500 text-xs mt-3 leading-relaxed">
+                        Supervising senior classes, board exam readiness, and academic mentoring.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faculty / Teachers Sub-Section -->
+        <div class="pt-8 border-t border-slate-200">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span
+                    class="inline-block px-3.5 py-1 rounded-full bg-alliedRed-50 text-alliedRed-600 font-bold text-xs uppercase tracking-wider mb-3">
+                    Dedicated Educators
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                    Our Respected Faculty
+                </h2>
+                <p class="mt-3 text-slate-600 text-sm sm:text-base">
+                    Meet the passionate teachers inspiring curiosity, discipline, and academic achievement every day.
+                </p>
+            </div>
+
+            <!-- Faculty Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+
+                <!-- 1. Chemistry Teacher - TEACHER OF THE MONTH -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border-2 border-amber-400 transition duration-300 group relative flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="sir che.jpg" alt="Chemistry Teacher"
+                            class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/500x600/e2e8f0/64748b?text=sir+che.jpg';">
+
+                        <!-- Small Corner Badge: Subject -->
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md border border-white/20">
+                            Chemistry
+                        </span>
+
+                        <!-- Teacher of the Month Ribbon/Badge -->
+                        <div
+                            class="absolute bottom-3 left-3 right-3 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-slate-950 px-3 py-1.5 rounded-xl shadow-lg flex items-center justify-center gap-1.5 border border-yellow-200">
+                            <i class="fa-solid fa-star text-xs animate-spin" style="animation-duration: 6s;"></i>
+                            <span class="text-xs font-extrabold uppercase tracking-wider">Teacher of the Month</span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between bg-gradient-to-b from-amber-50/40 to-white">
+                        <div>
+                            <h3 class="font-heading text-lg font-bold text-slate-900">Sir Chemistry</h3>
+                            <p class="text-xs font-semibold text-amber-700 mt-0.5">Chemistry Department • Star Educator
+                            </p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3">
+                            Recognized for outstanding student engagement, conceptual clarity, and academic dedication.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Discipline Incharge & Math Teacher -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="sir math.jpg" alt="Discipline Incharge & Math"
+                            class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/500x600/e2e8f0/64748b?text=displan+ncrge.jpg';">
+                        <!-- Small Corner Badge -->
+                        <span
+                            class="absolute top-3 right-3 bg-alliedRed-600/95 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md border border-white/20">
+                            Discipline Incharge &amp; Math
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-lg font-bold text-slate-900">Discipline Incharge &amp; Math
+                            </h3>
+                            <p class="text-xs font-semibold text-alliedBlue-600 mt-0.5">Mathematics &amp; Campus
+                                Discipline</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3">
+                            Upholding campus discipline alongside strong analytical and mathematical foundations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Physics Teacher -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="sir physics.png" alt="Physics Teacher"
+                            class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/500x600/e2e8f0/64748b?text=sir+physics.jpg';">
+                        <!-- Small Corner Badge -->
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md border border-white/20">
+                            Physics
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-lg font-bold text-slate-900">Sir Physics</h3>
+                            <p class="text-xs font-semibold text-alliedBlue-600 mt-0.5">Physics Department</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3">
+                            Making laws of physics practical, understandable, and exciting for young minds.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. Computer Teacher -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="mam computer.png" alt="Computer Teacher"
+                            class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/500x600/e2e8f0/64748b?text=mam+computer.jpg';">
+                        <!-- Small Corner Badge -->
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md border border-white/20">
+                            Computer
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-lg font-bold text-slate-900">Computer Science Teacher</h3>
+                            <p class="text-xs font-semibold text-alliedBlue-600 mt-0.5">IT &amp; Computer Lab</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3">
+                            Equipping students with essential digital literacy, programming basics, and computing
+                            skills.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. English Teacher -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="mam english.png" alt="English Teacher"
+                            class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/500x600/e2e8f0/64748b?text=mam+english.jpg';">
+                        <!-- Small Corner Badge -->
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md border border-white/20">
+                            English
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-lg font-bold text-slate-900">English Teacher</h3>
+                            <p class="text-xs font-semibold text-alliedBlue-600 mt-0.5">English Language &amp;
+                                Literature</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3">
+                            Developing fluent communication, creative writing, and strong reading comprehension.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. Tarjuma-tul-Quran Teacher -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="Tqmam.png" alt="Tarjuma-tul-Quran Teacher"
+                            class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/500x600/e2e8f0/64748b?text=Tqmam.jpg';">
+                        <!-- Small Corner Badge -->
+                        <span
+                            class="absolute top-3 right-3 bg-emerald-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md border border-white/20">
+                            Tarjuma-tul-Quran
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-lg font-bold text-slate-900">Tarjuma-tul-Quran Teacher</h3>
+                            <p class="text-xs font-semibold text-emerald-700 mt-0.5">Islamic Studies &amp; Moral
+                                Education</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3">
+                            Nurturing spiritual understanding, ethical values, and Quranic comprehension.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 7. Extra Faculty Slot 1 (Replace teacher1.jpg with your teacher photo) -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="sir writting.png" alt="Writting Teacher"
+                            class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/500x600/e2e8f0/64748b?text=teacher1.jpg';">
+                        <!-- Small Corner Badge -->
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md border border-white/20">
+                            Writting Teacher
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-lg font-bold text-slate-900">Writting Teacher</h3>
+                            <p class="text-xs font-semibold text-alliedBlue-600 mt-0.5">Handwriting & Calligraphy
+                                Teacher</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3">
+                            Neat Presentation
+                            Nurturing legibility, fine motor precision, and pride in clean, well-presented work.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="sir gramar.png" alt="Faculty Member 2"
+                            class="w-full h-full teacher-img group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/500x600/e2e8f0/64748b?text=teacher2.jpg';">
+                        <!-- Small Corner Badge -->
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md border border-white/20">
+                            Grammar Teacher
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-lg font-bold text-slate-900">Grammar Teacher</h3>
+                            <p class="text-xs font-semibold text-alliedBlue-600 mt-0.5">Language Structure</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3">
+
+                            Building strong foundational skills, sentence accuracy, and clear written expression.
+                        </p>
+                    </div>
+                </div>
+                <!-- Teacher Card 5: Islamiyat Teacher -->
+                <!-- Teacher Card 5: Islamiyat Teacher -->
+                <div
+                    class="lg:col-start-2 bg-slate-50 rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 bg-slate-100 overflow-hidden">
+                        <img src="sirr.png" alt="Islamiyat Teacher"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x500/e2e8f0/64748b?text=Islamiyat+Teacher'">
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-800/95 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Islamiyat
+                        </span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-heading font-bold text-lg text-slate-900">Islamiyat Teacher</h3>
+                        <p class="text-xs text-alliedBlue-600 font-semibold mt-1">Islamic Studies & History</p>
+                        <p class="text-xs text-slate-500 mt-2">Teaching Islamic values, ethics, and foundational
+                            religious knowledge.</p>
+                    </div>
+                </div>
+
+                <!-- Teacher Card 6: Urdu Teacher -->
+                <div
+                    class="bg-slate-50 rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 bg-slate-100 overflow-hidden">
+                        <img src="sir.png" alt="Urdu Teacher"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x500/e2e8f0/64748b?text=Urdu+Teacher'">
+                        <span
+                            class="absolute top-3 right-3 bg-alliedRed-600/95 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Urdu Adab
+                        </span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-heading font-bold text-lg text-slate-900">Urdu Teacher</h3>
+                        <p class="text-xs text-alliedRed-600 font-semibold mt-1">Urdu Language & Literature</p>
+                        <p class="text-xs text-slate-500 mt-2">Fostering linguistic proficiency, poetry appreciation,
+                            and grammar mastery.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="results" class="py-16 sm:py-20 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span
+                        class="inline-block px-3.5 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs uppercase tracking-wider mb-3">
+                        Academic Excellence
+                    </span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        Board &amp; School Results
+                    </h2>
+                    <p class="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl">
+                        Celebrating the hard work and outstanding achievements of our high achievers at Allied School
+                        Mian Ali Campus.
+                    </p>
+                </div>
+                <div
+                    class="inline-flex items-center gap-2 text-xs font-semibold text-alliedBlue-700 bg-alliedBlue-50 px-4 py-2.5 rounded-xl border border-alliedBlue-100">
+                    <i class="fa-solid fa-trophy text-amber-500"></i> Toppers &amp; Result Gallery
+                </div>
+            </div>
+
+            <!-- Result Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Result Slot 1 -->
+                <div
+                    class="bg-slate-50 rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="result100.png" alt="Matriculation Toppers"
+                            class="w-full h-full object-contain bg-slate-100 group-hover:scale-105 transition duration-500"
+                            ...>
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-700/95 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Board Result
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-lg text-slate-900">Matriculation Toppers</h3>
+                        <p class="text-xs text-slate-500 mt-1">Outstanding performance in annual board examinations.</p>
+                    </div>
+                </div>
+
+                <!-- Result Slot 2 -->
+                <div
+                    class="bg-slate-50 rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="result.png" alt="Annual Examination Result"
+                            class="w-full h-full object-contain bg-slate-100 group-hover:scale-105 transition duration-500"
+                            ...>
+                        <span
+                            class="absolute top-3 right-3 bg-alliedRed-600/95 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            High Achievers
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-lg text-slate-900">Annual Examination</h3>
+                        <p class="text-xs text-slate-500 mt-1">Class-wise position holders and distinction achievers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Result Slot 3 -->
+                <div
+                    class="bg-slate-50 rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 group flex flex-col">
+                    <div class="relative h-72 w-full bg-slate-100 overflow-hidden">
+                        <img src="stu10.png" alt="matric List"
+                            class="w-full h-full object-contain bg-slate-100 group-hover:scale-105 transition duration-500"
+                            ...>
+                        <span
+                            class="absolute top-3 right-3 bg-alliedBlue-800/95 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                            Honor Roll
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-lg text-slate-900">Campus Merit List</h3>
+                        <p class="text-xs text-slate-500 mt-1">Celebrating consistent academic excellence across all
+                            wings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Updates Section (Strictly NO Dates) -->
+    <section id="news" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span
+                class="inline-block px-3.5 py-1 rounded-full bg-alliedRed-50 text-alliedRed-600 font-bold text-xs uppercase tracking-wider mb-3">
+                Campus Bulletin
+            </span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">
+                Latest News &amp; Announcements
+            </h2>
+            <p class="mt-3 text-slate-600 text-sm sm:text-base">
+                Stay informed about upcoming recreational tours and academic test series at Allied School Mian Ali
+                Campus.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- News 1: Boys Trip to Murree (No Date) -->
+            <article
+                class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 flex flex-col">
+                <div
+                    class="h-48 bg-gradient-to-br from-alliedBlue-700 via-alliedBlue-600 to-sky-500 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                    <i class="fa-solid fa-mountain-sun text-7xl text-white/15 absolute -bottom-3 -right-3"></i>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-bold uppercase tracking-wider">
+                            Boys' Study &amp; Fun Tour
+                        </span>
+                        <span class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center">
+                            <i class="fa-solid fa-bus"></i>
+                        </span>
+                    </div>
+                    <h3 class="font-heading text-2xl font-extrabold leading-snug">
+                        Boys' Recreational Trip to Murree
+                    </h3>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Allied School Mian Ali Campus is organizing an exciting recreational and educational trip to
+                        <strong>Murree</strong> for our boys' section. Students will enjoy scenic hill views, supervised
+                        group activities, and memorable fellowship under faculty supervision.
+                    </p>
+                    <div
+                        class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-alliedBlue-700">
+                        <span><i class="fa-solid fa-location-dot mr-1 text-alliedRed-600"></i> Destination: Murree
+                            Hills</span>
+                        <span class="px-2.5 py-1 rounded-md bg-alliedBlue-50">Boys Section</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- News 2: Girls Trip to Lahore (No Date) -->
+            <article
+                class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 flex flex-col">
+                <div
+                    class="h-48 bg-gradient-to-br from-alliedRed-700 via-alliedRed-600 to-rose-500 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                    <i class="fa-solid fa-landmark text-7xl text-white/15 absolute -bottom-3 -right-3"></i>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-bold uppercase tracking-wider">
+                            Girls' Cultural &amp; Fun Tour
+                        </span>
+                        <span class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center">
+                            <i class="fa-solid fa-bus"></i>
+                        </span>
+                    </div>
+                    <h3 class="font-heading text-2xl font-extrabold leading-snug">
+                        Girls' Recreational Trip to Lahore
+                    </h3>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        A wonderful recreational and heritage excursion to <strong>Lahore</strong> is planned for our
+                        girls' section. Accompanied by female faculty members, students will explore historic landmarks
+                        and recreational spots in a safe, well-organized environment.
+                    </p>
+                    <div
+                        class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-alliedRed-700">
+                        <span><i class="fa-solid fa-location-dot mr-1 text-alliedBlue-600"></i> Destination:
+                            Lahore</span>
+                        <span class="px-2.5 py-1 rounded-md bg-red-50">Girls Section</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- News 3: Upcoming Test Series (No Date) -->
+            <article
+                class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200/80 transition duration-300 flex flex-col">
+                <div
+                    class="h-48 bg-gradient-to-br from-slate-900 via-alliedBlue-900 to-alliedBlue-700 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                    <i class="fa-solid fa-file-pen text-7xl text-white/15 absolute -bottom-3 -right-3"></i>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 border border-amber-300/30 text-xs font-bold uppercase tracking-wider">
+                            Academic Schedule
+                        </span>
+                        <span class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+                    </div>
+                    <h3 class="font-heading text-2xl font-extrabold leading-snug">
+                        Upcoming Campus Test Series
+                    </h3>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The comprehensive <strong>Test Series</strong> is approaching for board and school classes to
+                        ensure thorough revision and exam confidence. Students are advised to stay focused, revise daily
+                        lessons, and consult their subject teachers for syllabus guidance.
+                    </p>
+                    <div
+                        class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-700">
+                        <span><i class="fa-solid fa-check-circle mr-1 text-emerald-600"></i> Exam Preparation</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-100">All Classes</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="bg-alliedBlue-900 text-white pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/15">
+                <!-- Brand Column -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3.5">
+                        <div
+                            class="w-14 h-14 bg-white rounded-2xl p-1.5 flex items-center justify-center shadow-md overflow-hidden">
+                            <!-- School Logo Image -->
+                            <img src="alliedlogo.png" alt="Allied School Logo" class="w-full h-full object-contain"
+                                onerror="this.onerror=null; this.src='https://placehold.co/120x120/0056b3/ffffff?text=Logo';">
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-xl font-extrabold text-white">Allied School</h3>
+                            <p class="text-sm font-semibold text-red-300">Mian Ali Campus — Project of PGC</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-200 text-sm max-w-md leading-relaxed">
+                        Dedicated to nurturing confident, disciplined, and knowledgeable leaders of tomorrow through
+                        modern education and timeless values.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-base text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-blue-200">
+                        <li><a href="#home" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-red-400"></i> Home</a></li>
+                        <li><a href="#administration" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-red-400"></i> Administration &amp;
+                                Faculty</a></li>
+                        <li><a href="#results" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-red-400"></i> Board &amp; School
+                                Results</a></li>
+                        <li><a href="#news" class="hover:text-white transition flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-[10px] text-red-400"></i> News &amp;
+                                Updates</a></li>
+                        <li><a href="https://www.facebook.com/allied229makkuana" target="_blank"
+                                class="hover:text-white transition flex items-center"><span
+                                    class="text-red-500 mr-2">›</span> Facebook Page</a></li>
+                    </ul>
+                </div>
+
+                <!-- Campus Info -->
+                <div>
+                    <h4 class="font-heading font-bold text-base text-white mb-4">Campus Information</h4>
+                    <ul class="space-y-3 text-sm text-blue-200">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-red-400 mt-1"></i>
+                            <span>Allied School(Mian Ali Campus), behind Bank Alfla, Makkuana, Jaranawala road,
+                                Faisalabad,
+                                Punjab, Pakistan</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-sky-300"></i>
+                            <span>Mon – Sat: 8:00 AM – 2:00 PM</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-school text-amber-300"></i>
+                            <span>Playgroup to Matriculation</span>
+                        </li>
+                        <!-- Phone Number Line -->
+                        <div class="flex items-center space-x-3 text-slate-300 text-sm mt-3">
+                            <svg class="w-5 h-5 text-red-500 shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                            <span>+92 325 6179186</span>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-300">
+                <p>&copy; Allied School — Mian Ali Campus. All Rights Reserved.</p>
+                <p class="text-center text-blue-200/90 font-medium">Created by Asadullah — 9th Jinnah</p>
+                <p>A Project of Punjab Group of Colleges (PGC)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
